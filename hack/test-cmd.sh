@@ -113,12 +113,13 @@ for test in "${tests[@]}"; do
   # wait for the project cache to catch up and correctly list us in the new project
   os::cmd::try_until_text "oc get projects -o name" "projects/${namespace}"
   os::test::junit::declare_suite_end
-
+  echo '=========== start test suits ========================='
   if ! ${test}; then
     failed="true"
     tail -40 "${LOG_DIR}/openshift.log"
   fi
 
+  echo '=========== finished test suits ========================='
   os::test::junit::declare_suite_start "cmd/${namespace}-namespace-teardown"
   os::cmd::expect_success "oc project '${CLUSTER_ADMIN_CONTEXT}'"
   os::cmd::expect_success "oc delete project '${namespace}'"

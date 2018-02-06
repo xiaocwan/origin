@@ -69,6 +69,10 @@ Therefore, if your test uses bash variables and you would like to do an assignme
 ---
 
 The utility functions contingent on command success or failure are:
+=============================
+/home/xiaocwan/go/src/github.com/openshift/origin/hack/test-cmd.sh
+/home/xiaocwan/go/src/github.com/openshift/origin/cmd/cluster-capacity/go/src/github.com/kubernetes-incubator/cluster-capacity/hack/lib/cmd.sh
+=============================
 
 #### `os::cmd::expect_success CMD` 
 `expect_success` takes one argument, the command to be run, and runs it. If the command succeeds (its return code is `0`), the utility 
